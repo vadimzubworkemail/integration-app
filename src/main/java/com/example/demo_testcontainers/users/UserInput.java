@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class UserInput {
-    String login;
+    String u_login;
     String email;
 }

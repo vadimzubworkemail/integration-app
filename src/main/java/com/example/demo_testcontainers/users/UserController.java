@@ -30,12 +30,12 @@ public class UserController {
 
     @PostMapping
     public User createUser(@RequestBody UserInput input) {
-        return userService.createUser(input.getLogin(), input.getEmail());
+        return userService.createUser(input.getU_login(), input.getEmail());
     }
 
     @PutMapping("/{id}")
     public User editUser(@PathVariable UUID id, @RequestBody UserInput input) {
-        return userService.editUser(id, input.getLogin(), input.getEmail());
+        return userService.editUser(id, input.getU_login(), input.getEmail());
     }
 
 //    @DeleteMapping

@@ -1,5 +1,6 @@
 package com.example.demo_testcontainers.users;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Value;
@@ -19,9 +20,9 @@ public class User {
     UUID id;
 
     @Column(name = "u_login")
-    String login;
+    @JsonProperty("u_login")
+    String u_login;
 
     @Column(name = "email")
     String email;
-
 }

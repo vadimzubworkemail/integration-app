@@ -45,7 +45,7 @@ class UserServiceCRUDWithTestcontainersTest extends PostgresContainer {
         User expectedUser = userService.createUser("expected_login", "expected@email.com");
         id = expectedUser.getId();
         User actualUser = userService.loadUserById(id);
-        assertThat(actualUser.getLogin()).isEqualTo(expectedUser.getLogin());
+        assertThat(actualUser.getU_login()).isEqualTo(expectedUser.getU_login());
         assertThat(actualUser.getEmail()).isEqualTo(expectedUser.getEmail());
     }
 
@@ -55,7 +55,7 @@ class UserServiceCRUDWithTestcontainersTest extends PostgresContainer {
         id = user.getId();
         userService.editUser(id, "edit_login", "edit@mail.net");
         User editedUser = userService.loadUserById(id);
-        assertThat(editedUser.getLogin()).isEqualTo("edit_login");
+        assertThat(editedUser.getU_login()).isEqualTo("edit_login");
         assertThat(editedUser.getEmail()).isEqualTo("edit@mail.net");
     }
 
